@@ -1,0 +1,11 @@
+(ns clojure-noob.core
+  (:gen-class))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (println "I am a little teapot!"))
+
+(defn train
+  []
+  (println "Choo Choo!"))
