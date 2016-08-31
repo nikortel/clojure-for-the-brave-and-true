@@ -38,11 +38,10 @@
 (defn symmetrize-body-parts
   "Expects a seq of maps that have a :name and :size"
   [asym-body-parts]
-  (loop [remaining-asym-parts asym-body-parts final-body-parts []]
-    (if (empty? remaining-asym-parts)
-      final-body-parts
-      (let [[part & remaining] remaining-asym-parts]
-        (recur remaining (into final-body-parts (set [part (matching-part part)])))))))
+  (reduce (fn [final-body-parts part]
+            (into final-body-parts (set [part (matching-part part)])))
+          [] ;default value for the reduce
+          asym-body-parts))
 
 (defn create-full-hobbit
   []
