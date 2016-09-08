@@ -74,3 +74,11 @@
       (if (> accumulated-size target)
         part
         (recur remaining (+ accumulated-size (:size (first remaining))))))))
+
+(defn add-100
+  [number]
+  (+ number 100))
+
+(defn dec-maker
+  [number]
+  #(- % number))
